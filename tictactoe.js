@@ -28,6 +28,7 @@ resetButton.addEventListener('click', function(){
         whichPlayer = 1;
         winText.classList.remove("blinking");
         winText.textContent = "Winning player flashing";
+        allPlaySpots[i].style.background = "white";
     }
 })
 
@@ -48,8 +49,14 @@ function checkForWin (first, second, third) {
         if (allPlaySpots[first].textContent === allPlaySpots[second].textContent && allPlaySpots[first].textContent === allPlaySpots[third].textContent) {
             if (whichPlayer === 1) {
                 winText.textContent = "PLAYER ONE WINS!!!";
+                allPlaySpots[first].style.background = "lightgreen";
+                allPlaySpots[second].style.background = "lightgreen";
+                allPlaySpots[third].style.background = "lightgreen";
             } else {
                 winText.textContent = "PLAYER TWO WINS!!!";
+                allPlaySpots[first].style.background = "lightgreen";
+                allPlaySpots[second].style.background = "lightgreen";
+                allPlaySpots[third].style.background = "lightgreen";
             }
             winText.classList.add("blinking");
         }
